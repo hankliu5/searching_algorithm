@@ -24,7 +24,7 @@ class UserInput
 
   array_input = check_input.to_i
 
-  puts "Enter an integer to decide loop number"
+  puts "Enter an integer to decide times of iteration"
 
   size_input = check_input.to_i
 
