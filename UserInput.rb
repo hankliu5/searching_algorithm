@@ -27,34 +27,24 @@ class UserInput
   puts "Enter an integer to decide times of iteration"
 
   size_input = check_input.to_i
+  array = Array(1..array_input).shuffle!
 
-  sum = 0
-
+  beginning_time = Time.now
   size_input.times do
-    array = Array(1..array_input)
     target = rand 1..array_input
-
-    beginning_time = Time.now
     SearchAlgorithms.linearSearch(array, target)
-    end_time = Time.now
-
-    sum += (end_time - beginning_time) * 1000
   end
+  end_time = Time.now
 
-  puts "time elapsed #{sum} milliseconds by using linear search"
+  puts "time elapsed #{(end_time - beginning_time) * 1000} milliseconds by using linear search"
 
-  sum = 0
-
+  beginning_time = Time.now
+  array.sort!
   size_input.times do
-    array = Array(1..array_input)
     target = rand 1..array_input
-
-    beginning_time = Time.now
     SearchAlgorithms.binarySearch(array, target)
-    end_time = Time.now
-
-    sum += (end_time - beginning_time) * 1000
   end
+  end_time = Time.now
 
-  puts "time elapsed #{sum} milliseconds by using binary search"
+  puts "time elapsed #{(end_time - beginning_time) * 1000} milliseconds by using binary search"
 end
